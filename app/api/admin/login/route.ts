@@ -1,0 +1,3 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { createHmac } from 'node:crypto'
+export async function POST(request: NextRequest) { const { username, password } = await request.json(); if (username !== process.env.ADMIN_USERNAME || password !== process.env.ADMIN_PASSWORD) return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 }); const value = createHmac('sha256', process.env.ADMIN_PASSWORD || '').update(username).digest('hex'); const response = NextResponse.json({ ok: true }); response.cookies.set('archio_admin', value, { httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production', maxAge: 60 * 60 * 8, path: '/' }); return response }
