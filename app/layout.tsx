@@ -4,9 +4,8 @@ import './globals.css'
 import { SiteNav } from '@/components/site-nav'
 
 export const metadata: Metadata = {
-  title: 'Archio — High-Converting Business Site',
+  title: 'IQS — High-Converting Business Site',
   description: 'Business growth with expert consultancy.',
-  generator: 'v0.app',
   icons: {
     icon: [
       {

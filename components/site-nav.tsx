@@ -4,7 +4,7 @@ export function SiteNav() {
   return (
     <>
       <header className="topbar">
-        <a className="logo" href="/">Archio</a>
+        <a className="logo" href="/">IQS</a>
         <div className="availability"><i /> available for work <span className="socials">│　□　│　□　│　□</span></div>
       </header>
       <nav className="floating-nav" aria-label="Main navigation">
