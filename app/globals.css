@@ -188,6 +188,7 @@ h2 em{font-family:'Crimson Pro',serif;font-weight:500}
 
 @media (min-width:801px) and (max-width:1750px){
   .section{padding:100px 7.8vw}
+  .hero{padding-top:30px}
   h2{font-size:clamp(31px,3.4vw,46px)}
   h3{font-size:19px}
   p{font-size:14px}
