@@ -14,16 +14,16 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   if (!authorized(request)) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   const body = await request.json()
-  if (!body.title?.trim() || !body.description?.trim() || !body.link?.trim()) return NextResponse.json({ error: 'All fields are required' }, { status: 400 })
-  await addResource({ title: body.title.trim(), description: body.description.trim(), link: body.link.trim() })
+  if (!body.title?.trim() || !body.link?.trim()) return NextResponse.json({ error: 'Title and link are required' }, { status: 400 })
+  await addResource({ title: body.title.trim(), link: body.link.trim() })
   return NextResponse.json({ ok: true })
 }
 
 export async function PUT(request: NextRequest) {
   if (!authorized(request)) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   const body = await request.json()
-  if (!body.id || !body.title?.trim() || !body.description?.trim() || !body.link?.trim()) return NextResponse.json({ error: 'All fields are required' }, { status: 400 })
-  await updateResource(body.id, { title: body.title.trim(), description: body.description.trim(), link: body.link.trim() })
+  if (!body.id || !body.title?.trim() || !body.link?.trim()) return NextResponse.json({ error: 'Title and link are required' }, { status: 400 })
+  await updateResource(body.id, { title: body.title.trim(), link: body.link.trim() })
   return NextResponse.json({ ok: true })
 }
 

@@ -8,7 +8,7 @@ export default function AdminPage() {
   const [error, setError] = useState('')
   const [resources, setResources] = useState<Resource[]>([])
   const [editingId, setEditingId] = useState<number | null>(null)
-  const [formData, setFormData] = useState({ title: '', description: '', link: '' })
+  const [formData, setFormData] = useState({ title: '', link: '' })
   const [confirmDelete, setConfirmDelete] = useState<number | null>(null)
   const formRef = useRef<HTMLFormElement>(null)
 
@@ -42,23 +42,23 @@ export default function AdminPage() {
 
   function startEdit(resource: Resource) {
     setEditingId(resource.id)
-    setFormData({ title: resource.title, description: resource.description, link: resource.link })
+    setFormData({ title: resource.title, link: resource.link })
     formRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
   function cancelEdit() {
     setEditingId(null)
-    setFormData({ title: '', description: '', link: '' })
+    setFormData({ title: '', link: '' })
   }
 
   async function submitForm(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const { title, description, link } = formData
-    if (!title.trim() || !description.trim() || !link.trim()) return setError('Please complete every field.')
+    const { title, link } = formData
+    if (!title.trim() || !link.trim()) return setError('Please complete every field.')
 
     const url = editingId ? '/api/admin/resources' : '/api/admin/resources'
     const method = editingId ? 'PUT' : 'POST'
-    const body = editingId ? { id: editingId, title, description, link } : { title, description, link }
+    const body = editingId ? { id: editingId, title, link } : { title, link }
 
     const response = await fetch(url, {
       method,
@@ -68,7 +68,7 @@ export default function AdminPage() {
 
     if (response.ok) {
       formRef.current?.reset()
-      setFormData({ title: '', description: '', link: '' })
+      setFormData({ title: '', link: '' })
       setEditingId(null)
       setError(editingId ? 'Resource updated successfully.' : 'Resource added successfully.')
       fetchResources()
@@ -122,10 +122,6 @@ export default function AdminPage() {
               <input name="title" value={formData.title} onChange={handleChange} required />
             </label>
             <label>
-              Description
-              <textarea name="description" rows={4} value={formData.description} onChange={handleChange} required />
-            </label>
-            <label>
               PDF Link
               <input name="link" type="url" placeholder="https://..." value={formData.link} onChange={handleChange} required />
             </label>
@@ -142,7 +138,6 @@ export default function AdminPage() {
               <thead>
                 <tr>
                   <th>Title</th>
-                  <th>Description</th>
                   <th>Link</th>
                   <th>Actions</th>
                 </tr>
@@ -151,7 +146,6 @@ export default function AdminPage() {
                 {resources.map((resource) => (
                   <tr key={resource.id}>
                     <td>{resource.title}</td>
-                    <td className="description-cell">{resource.description}</td>
                     <td><a href={resource.link} target="_blank" rel="noreferrer" className="link-cell">View ↗</a></td>
                     <td className="actions-cell">
                       {confirmDelete === resource.id ? (
