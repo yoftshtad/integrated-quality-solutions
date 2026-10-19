@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -86,6 +87,20 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+
+      <footer className="footer cream section">
+        <Link className="logo" href="/">Integrated Quality Solutions</Link>
+        <h2>Let&apos;s build your next growth story.</h2>
+        <p>Ready to turn your ideas into measurable progress? Let&apos;s talk.</p>
+        <Link className="button" href="/contact">
+          Get Started <span>↗</span>
+        </Link>
+        <div className="footer-bottom">
+          <span>© 2026 Integrated Quality Solutions</span>
+          <span>Addis Ababa, Ethiopia</span>
+          <span>Instagram　Whatsapp　Facebook</span>
+        </div>
+      </footer>
     </main>
   )
 }
