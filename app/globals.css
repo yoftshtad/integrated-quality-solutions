@@ -185,3 +185,61 @@ h2 em{font-family:'Crimson Pro',serif;font-weight:500}
   .contact-hero{padding-top:125px}
   .about-intro,.resources-page,.services-page .section:first-of-type{padding-top:95px}
 }
+
+@media (min-width:801px) and (max-width:1750px){
+  .section{padding:100px 7.8vw}
+  h2{font-size:clamp(31px,3.4vw,46px)}
+  h3{font-size:19px}
+  p{font-size:14px}
+  .eyebrow{padding:8px 34px;font-size:12px;margin-bottom:22px}
+  .section-intro{margin-bottom:40px}
+  .section-intro p{font-size:14px;margin-top:14px}
+  .actions{margin-top:26px}
+  .rating{margin-top:34px}
+
+  .why,.compare,.insights,.team{min-height:0}
+  .center-cta{padding:90px 0 10px}
+  .why-cards article{min-height:180px;padding:22px}
+  .why-cards h3{margin-top:48px}
+  .process{gap:50px}
+  .steps article{padding:20px 22px;min-height:100px;gap:22px}
+  .steps b{font-size:40px}
+  .service-card{padding:8px;gap:8px}
+  .service-card h3,.service-card p{padding:6px 12px}
+  .faq-layout{gap:45px}
+  .quote{padding:36px}
+  .quote h2{font-size:31px}
+  .faq-list button{padding:18px 0}
+  .resource-card-copy{padding:22px}
+  .pdf-icon{height:180px;font-size:24px}
+  .insight-grid article{padding:10px}
+  .insight-grid img{height:190px}
+  .insight-grid h3,.insight-grid p,.insight-grid a{margin:14px 16px 0}
+  .insight-grid.projects-grid img{height:290px}
+  .footer .logo{margin-bottom:35px}
+  .footer-bottom{margin-top:80px;padding-top:18px}
+
+  .service-detail h2{font-size:clamp(26px,3vw,36px);margin:10px 0 16px}
+  .service-detail>p{font-size:15px;margin-bottom:22px}
+  .service-list{gap:10px;margin-bottom:26px}
+
+  .about-intro .lead{font-size:clamp(16px,1.4vw,18px);margin-top:20px}
+
+  .contact-section{padding-top:85px;padding-bottom:85px}
+  .contact-card{gap:50px;padding:40px 44px}
+  .contact-page-form{padding:32px 36px 26px;margin-top:44px}
+  .contact-page-form h2{font-size:24px;margin-bottom:24px}
+  .contact-page-fields{gap:22px}
+  .contact-page-inputs{gap:14px}
+  .contact-page-form textarea{min-height:150px}
+  .contact-info-grid{gap:14px;margin-top:16px}
+  .contact-info-grid article{padding:20px 12px}
+  .contact-faq{gap:55px}
+
+  .blog-hero h1{font-size:clamp(32px,3.8vw,48px)}
+  .blog-meta{margin-bottom:24px}
+  .blog-article{padding-top:44px}
+  .blog-article h2{margin:36px auto 12px}
+
+  .admin-panel{padding:36px}
+}
