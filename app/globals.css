@@ -261,3 +261,21 @@ h2 em{font-family:'Crimson Pro',serif;font-weight:500}
   .availability{display:none}
   .nav-toggle{display:flex}
 }
+
+@media(max-width:800px){.contact-info-grid{grid-template-columns:1fr;gap:14px}}
+
+@media(max-width:800px){
+  .contact-hero{padding-top:30px}
+  .about-intro,.resources-page,.blog-hero{padding-top:30px}
+  .services-page .section:first-of-type{padding-top:30px}
+  .contact-faq{grid-template-columns:1fr;gap:40px}
+  .contact-faq .section-intro{text-align:center;justify-items:center}
+  .contact-faq .section-intro p{max-width:100%;margin-left:auto;margin-right:auto}
+  .contact-faq .button{justify-self:center}
+  .contact-faq .faq-list{text-align:left}
+}
+
+.contact-socials strong{font-size:14px;font-weight:500;color:var(--ink)}
+.ceo{display:grid;justify-items:start;gap:10px;margin:-16px 0 26px}
+.ceo img{width:80px;height:80px;border-radius:50%;object-fit:cover}
+.ceo p{margin:0;font-size:14px;font-weight:500;color:var(--ink)}

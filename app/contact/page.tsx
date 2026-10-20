@@ -4,9 +4,10 @@ import { useState } from 'react'
 
 const faqs = [
   ['What services do you offer?', 'We provide end-to-end business consulting, including strategy development, market positioning, process optimization, and performance improvement.'],
-  ['How can I contact your team?', 'Send us a message and our team will get back to you with the next steps.'],
-  ['What payment methods do you accept?', 'We will discuss payment options during the consultation process.'],
-  ['What if I have an issue with my project?', 'Reach out through the form and we will make sure the right person helps you quickly.'],
+  ['How long does a typical consultation process take?', 'Most consulting engagements range from a few weeks to several months, depending on project scope, business size, and objectives.'],
+  ['Do you work with startups or established businesses?', 'Yes — we support both. Whether you\'re scaling a startup or refining operations in an established company, our process adapts to your stage of growth.'],
+  ['What can I expect in the first consultation?', 'We\'ll discuss your current challenges, desired outcomes, and explore how our strategies can create measurable impact for your business.'],
+  ['Do you offer ongoing support after the consultation?', 'Absolutely. We provide continuous advisory sessions and performance reviews to ensure strategies are successfully implemented and delivering results.'],
 ]
 
 function Button({ children }: { children: React.ReactNode }) {
@@ -24,7 +25,8 @@ export default function ContactPage() {
         <p>Have a question or ready to move your business forward? Tell us a little about what you&apos;re working on.</p>
 
         <form className="contact-page-form" id="contact-form">
-          <h2>Contact Form</h2>
+          <div className="ceo"><img src="/hero/minitad.png" alt="Tadele Kumie" width={1113} height={1280} loading="lazy" /><p>Tadele Kumie</p></div>
+          <h2>Contact Us</h2>
           <div className="contact-page-fields">
             <div className="contact-page-inputs">
               <label>Your Name<input type="text" name="name" placeholder="Type your name" /></label>
